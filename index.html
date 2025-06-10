@@ -5,136 +5,70 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SN Associates & Consulting</title>
+  <script src="https://cdn.tailwindcss.com"></script>
   <style>
     body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      color: #fff;
-      background: url('banner.jpg') no-repeat center center fixed;
+      background-image: url('banner.jpg');
       background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
     }
-    header {
-      padding: 20px;
-      display: flex;
-      align-items: center;
-      background: rgba(0, 0, 0, 0.7);
-    }
-    header img {
-      height: 60px;
-      margin-right: 20px;
-    }
-    header h1 {
-      font-size: 28px;
-      margin: 0;
-    }
-    nav {
-      text-align: center;
-      background-color: rgba(0, 0, 0, 0.8);
-      padding: 15px 0;
-    }
-    nav a {
-      margin: 0 15px;
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    section {
-      padding: 60px 20px;
-      background-color: rgba(0, 0, 0, 0.7);
-      margin: 20px;
-      border-radius: 8px;
-    }
-    .form-group {
-      margin-bottom: 15px;
-    }
-    input, select, textarea {
-      width: 100%;
-      padding: 10px;
-      border: none;
-      border-radius: 4px;
-    }
-    button {
-      padding: 10px 20px;
-      border: none;
-      background-color: #00b894;
-      color: white;
-      font-weight: bold;
-      cursor: pointer;
-      border-radius: 4px;
-    }
-    .qr {
-      display: flex;
-      justify-content: center;
-      margin-top: 20px;
-    }
-    .qr img {
-      height: 150px;
+    .backdrop {
+      backdrop-filter: blur(8px);
+      background-color: rgba(0, 0, 0, 0.6);
     }
   </style>
 </head>
-<body>
-  <header>
-    <img src="logo.png" alt="SN Logo" />
-    <h1>SN Associates & Consulting</h1>
+<body class="text-white">
+  <header class="flex items-center justify-between p-4 backdrop">
+    <div class="flex items-center gap-4">
+      <img src="logo.png" alt="SN Logo" class="h-16 rounded" />
+      <h1 class="text-2xl font-bold">SN Associates & Consulting</h1>
+    </div>
+    <nav class="hidden md:flex gap-6">
+      <a href="#products" class="hover:text-green-400">Products</a>
+      <a href="#whatsapp" class="hover:text-green-400">WhatsApp</a>
+      <a href="#contact" class="hover:text-green-400">Contact</a>
+    </nav>
   </header>
 
-  <nav>
-    <a href="#products">Products</a>
-    <a href="#whatsapp">WhatsApp</a>
-    <a href="#contact">Contact Us</a>
-  </nav>
-
-  <section id="products">
-    <h2>Loan Services We Offer</h2>
-    <ul>
-      <li>Personal Loans</li>
-      <li>Professional Loans</li>
-      <li>Home Loans</li>
-      <li>Business Loans</li>
-      <li>Mortgage Loans</li>
-      <li>Education Loans</li>
-      <li>Other Customized Loan Solutions</li>
-    </ul>
-  </section>
-
-  <section id="whatsapp">
-    <h2>Contact via WhatsApp</h2>
-    <p>Scan the QR code below or click the link to message us on WhatsApp.</p>
-    <div class="qr">
-      <a href="https://wa.me/919948247428" target="_blank">
-        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://wa.me/919948247428" alt="WhatsApp QR" />
-      </a>
+  <section id="products" class="backdrop p-10 mt-6 rounded-xl max-w-5xl mx-auto">
+    <h2 class="text-3xl font-semibold mb-6">Loan Services We Offer</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <div class="bg-gray-800 p-4 rounded shadow">Personal Loans</div>
+      <div class="bg-gray-800 p-4 rounded shadow">Professional Loans</div>
+      <div class="bg-gray-800 p-4 rounded shadow">Home Loans</div>
+      <div class="bg-gray-800 p-4 rounded shadow">Business Loans</div>
+      <div class="bg-gray-800 p-4 rounded shadow">Mortgage Loans</div>
+      <div class="bg-gray-800 p-4 rounded shadow">Education Loans</div>
+      <div class="bg-gray-800 p-4 rounded shadow">Other Customized Loan Solutions</div>
     </div>
   </section>
 
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <form action="mailto:kyasaramsandeep@gmail.com" method="POST" enctype="text/plain">
-      <div class="form-group">
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" required />
-      </div>
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required />
-      </div>
-      <div class="form-group">
-        <label for="loan-type">Type of Loan</label>
-        <select id="loan-type" name="loan-type">
-          <option value="Personal">Personal Loan</option>
-          <option value="Professional">Professional Loan</option>
-          <option value="Home">Home Loan</option>
-          <option value="Business">Business Loan</option>
-          <option value="Mortgage">Mortgage Loan</option>
-          <option value="Education">Education Loan</option>
-          <option value="Other">Other</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="message">Message</label>
-        <textarea id="message" name="message" rows="4" required></textarea>
-      </div>
-      <button type="submit">Send Query</button>
+  <section id="whatsapp" class="backdrop p-10 mt-10 rounded-xl max-w-3xl mx-auto text-center">
+    <h2 class="text-3xl font-semibold mb-4">Contact via WhatsApp</h2>
+    <p class="mb-6">Scan the QR code or click to open WhatsApp chat with us:</p>
+    <a href="https://wa.me/919948247428" target="_blank">
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://wa.me/919948247428" alt="WhatsApp QR" class="mx-auto" />
+    </a>
+  </section>
+
+  <section id="contact" class="backdrop p-10 mt-10 rounded-xl max-w-3xl mx-auto">
+    <h2 class="text-3xl font-semibold mb-6">Contact Us</h2>
+    <form action="mailto:kyasaramsandeep@gmail.com" method="POST" enctype="text/plain" class="space-y-4">
+      <input type="text" name="name" placeholder="Your Name" required class="w-full p-3 rounded bg-gray-800 text-white border-none" />
+      <input type="email" name="email" placeholder="Your Email" required class="w-full p-3 rounded bg-gray-800 text-white border-none" />
+      <select name="loan-type" class="w-full p-3 rounded bg-gray-800 text-white border-none">
+        <option value="Personal">Personal Loan</option>
+        <option value="Professional">Professional Loan</option>
+        <option value="Home">Home Loan</option>
+        <option value="Business">Business Loan</option>
+        <option value="Mortgage">Mortgage Loan</option>
+        <option value="Education">Education Loan</option>
+        <option value="Other">Other</option>
+      </select>
+      <textarea name="message" rows="4" placeholder="Your message..." required class="w-full p-3 rounded bg-gray-800 text-white border-none"></textarea>
+      <button type="submit" class="bg-green-500 hover:bg-green-600 px-6 py-2 rounded text-white font-semibold">Send Message</button>
     </form>
   </section>
 </body>
