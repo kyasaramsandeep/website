@@ -1,0 +1,141 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SN Associates & Consulting</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      color: #fff;
+      background: url('banner.jpg') no-repeat center center fixed;
+      background-size: cover;
+    }
+    header {
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.7);
+    }
+    header img {
+      height: 60px;
+      margin-right: 20px;
+    }
+    header h1 {
+      font-size: 28px;
+      margin: 0;
+    }
+    nav {
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 15px 0;
+    }
+    nav a {
+      margin: 0 15px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    section {
+      padding: 60px 20px;
+      background-color: rgba(0, 0, 0, 0.7);
+      margin: 20px;
+      border-radius: 8px;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+    }
+    button {
+      padding: 10px 20px;
+      border: none;
+      background-color: #00b894;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    .qr {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .qr img {
+      height: 150px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="SN Logo" />
+    <h1>SN Associates & Consulting</h1>
+  </header>
+
+  <nav>
+    <a href="#products">Products</a>
+    <a href="#whatsapp">WhatsApp</a>
+    <a href="#contact">Contact Us</a>
+  </nav>
+
+  <section id="products">
+    <h2>Loan Services We Offer</h2>
+    <ul>
+      <li>Personal Loans</li>
+      <li>Professional Loans</li>
+      <li>Home Loans</li>
+      <li>Business Loans</li>
+      <li>Mortgage Loans</li>
+      <li>Education Loans</li>
+      <li>Other Customized Loan Solutions</li>
+    </ul>
+  </section>
+
+  <section id="whatsapp">
+    <h2>Contact via WhatsApp</h2>
+    <p>Scan the QR code below or click the link to message us on WhatsApp.</p>
+    <div class="qr">
+      <a href="https://wa.me/919948247428" target="_blank">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://wa.me/919948247428" alt="WhatsApp QR" />
+      </a>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <form action="mailto:kyasaramsandeep@gmail.com" method="POST" enctype="text/plain">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required />
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required />
+      </div>
+      <div class="form-group">
+        <label for="loan-type">Type of Loan</label>
+        <select id="loan-type" name="loan-type">
+          <option value="Personal">Personal Loan</option>
+          <option value="Professional">Professional Loan</option>
+          <option value="Home">Home Loan</option>
+          <option value="Business">Business Loan</option>
+          <option value="Mortgage">Mortgage Loan</option>
+          <option value="Education">Education Loan</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+      </div>
+      <button type="submit">Send Query</button>
+    </form>
+  </section>
+</body>
+</html>
