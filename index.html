@@ -3,88 +3,295 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SN Associates & Consulting</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <title>About Us | Your Company</title>
   <style>
-    body {
-      background-image: url('banner.jpg');
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
+    /* ===== Reset and Global Styles ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
-    .backdrop {
-      backdrop-filter: blur(6px);
-      background-color: rgba(0, 0, 0, 0.6);
+    
+    body {
+      font-family: 'Arial', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #fff;
+    }
+    
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px 0;
+    }
+    
+    /* ===== Header Navigation ===== */
+    header {
+      background: #fff;
+      padding: 10px 0;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      font-size: 1.5em;
+      font-weight: bold;
+      margin-left: 20px;
+    }
+    
+    nav ul {
+      list-style: none;
+      display: flex;
+      margin-right: 20px;
+    }
+    
+    nav ul li {
+      margin-left: 20px;
+    }
+    
+    nav a {
+      text-decoration: none;
+      color: #333;
+      font-size: 16px;
+      transition: color 0.3s ease;
+    }
+    
+    nav a:hover {
+      color: #007BFF;
+    }
+    
+    /* ===== Hero Section ===== */
+    .hero {
+      background: url('https://via.placeholder.com/1920x800') no-repeat center center/cover;
+      height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+      position: relative;
+    }
+    
+    .hero::after {
+      /* A dark overlay for improved readability */
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+    }
+    
+    .hero .container {
+      position: relative;
+      z-index: 1;
+    }
+    
+    .hero h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+    }
+    
+    .hero p {
+      font-size: 1.2em;
+    }
+    
+    /* ===== About Section ===== */
+    .about {
+      padding: 60px 0;
+    }
+    
+    .about-content {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 20px;
+    }
+    
+    .about-image,
+    .about-text {
+      flex: 1 1 500px;
+      padding: 20px;
+    }
+    
+    .about-image img {
+      width: 100%;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+    
+    .about-image img:hover {
+      transform: scale(1.02);
+    }
+    
+    .about-text h2 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+    
+    .about-text p {
+      font-size: 1em;
+      color: #555;
+      line-height: 1.8;
+    }
+    
+    /* ===== Team Section ===== */
+    .team {
+      background: #f9f9f9;
+      padding: 60px 0;
+      text-align: center;
+    }
+    
+    .team h2 {
+      font-size: 2.5em;
+      margin-bottom: 40px;
+    }
+    
+    .team-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+    
+    .team-member {
+      background: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      max-width: 250px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .team-member:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+    
+    .team-member img {
+      width: 100%;
+      border-radius: 50%;
+      margin-bottom: 15px;
+    }
+    
+    .team-member h3 {
+      margin-bottom: 5px;
+      font-size: 1.2em;
+    }
+    
+    .team-member p {
+      color: #777;
+      font-size: 0.9em;
+    }
+    
+    /* ===== Footer ===== */
+    footer {
+      background: #333;
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+    }
+    
+    footer p {
+      font-size: 0.9em;
+    }
+    
+    /* ===== Responsive Styles ===== */
+    @media (max-width: 768px) {
+      .about-content {
+        flex-direction: column;
+      }
+      nav ul {
+        flex-direction: column;
+      }
+      nav ul li {
+        margin: 10px 0;
+      }
+      .hero h1 {
+        font-size: 2.5em;
+      }
     }
   </style>
 </head>
-<body class="text-white">
-  <header class="flex items-center justify-between p-6 backdrop">
-    <div class="flex items-center gap-4">
-      <img src="logo.png" alt="SN Logo" class="h-14 rounded" />
-      <h1 class="text-2xl font-bold">SN Associates & Consulting</h1>
-    </div>
-    <nav class="hidden md:flex gap-6">
-      <a href="#about" class="hover:text-green-400">About</a>
-      <a href="#products" class="hover:text-green-400">Products</a>
-      <a href="#whatsapp" class="hover:text-green-400">WhatsApp</a>
-      <a href="#contact" class="hover:text-green-400">Contact</a>
+<body>
+  <!-- Header Navigation -->
+  <header>
+    <nav class="container">
+      <div class="logo">YourLogo</div>
+      <ul>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </nav>
   </header>
-
-  <section id="about" class="backdrop p-10 mt-6 rounded-xl max-w-4xl mx-auto" data-aos="fade-up">
-    <h2 class="text-4xl font-bold mb-4">About Us</h2>
-    <p class="text-lg leading-relaxed">
-      At <strong>SN Associates & Consulting</strong>, we are driven by a single goal: helping individuals and businesses access financial solutions that empower their futures.
-      With years of experience and personalized service, we stand as a reliable partner in providing a variety of loan services tailored to your needs.
-    </p>
-    <p class="text-md mt-4 text-gray-300">
-      Whether you're a working professional, a first-time homeowner, or an entrepreneur, we have a loan solution crafted just for you. Let’s make your goals happen — together.
-    </p>
-  </section>
-
-  <section id="products" class="backdrop p-10 mt-10 rounded-xl max-w-6xl mx-auto" data-aos="fade-up">
-    <h2 class="text-3xl font-semibold mb-6 text-center">Our Loan Services</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-      <div class="bg-gray-800 p-6 rounded-lg shadow hover:shadow-xl transition" data-aos="zoom-in">Personal Loans</div>
-      <div class="bg-gray-800 p-6 rounded-lg shadow hover:shadow-xl transition" data-aos="zoom-in">Professional Loans</div>
-      <div class="bg-gray-800 p-6 rounded-lg shadow hover:shadow-xl transition" data-aos="zoom-in">Home Loans</div>
-      <div class="bg-gray-800 p-6 rounded-lg shadow hover:shadow-xl transition" data-aos="zoom-in">Business Loans</div>
-      <div class="bg-gray-800 p-6 rounded-lg shadow hover:shadow-xl transition" data-aos="zoom-in">Mortgage Loans</div>
-      <div class="bg-gray-800 p-6 rounded-lg shadow hover:shadow-xl transition" data-aos="zoom-in">Education Loans</div>
-      <div class="bg-gray-800 p-6 rounded-lg shadow hover:shadow-xl transition" data-aos="zoom-in">Other Customized Solutions</div>
+  
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h1>Our Story</h1>
+      <p>Crafting experiences that inspire and connect.</p>
     </div>
   </section>
-
-  <section id="whatsapp" class="backdrop p-10 mt-10 rounded-xl max-w-3xl mx-auto text-center" data-aos="fade-up">
-    <h2 class="text-3xl font-semibold mb-4">Chat with Us on WhatsApp</h2>
-    <p class="mb-6">Scan the QR or click below to start a chat.</p>
-    <a href="https://wa.me/919948247428" target="_blank">
-      <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://wa.me/919948247428" alt="WhatsApp QR" class="mx-auto hover:scale-105 transition" />
-    </a>
+  
+  <!-- About Section -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-content">
+        <div class="about-image">
+          <img src="https://via.placeholder.com/500x300" alt="About Us Image" />
+        </div>
+        <div class="about-text">
+          <h2>Who We Are</h2>
+          <p>
+            We are a passionate team dedicated to creating innovative, dynamic, 
+            and captivating experiences. Our mission is to deliver meaningful 
+            solutions that drive excellence, foster creativity, and build lasting relationships.
+          </p>
+        </div>
+      </div>
+    </div>
   </section>
-
-  <section id="contact" class="backdrop p-10 mt-10 rounded-xl max-w-3xl mx-auto" data-aos="fade-up">
-    <h2 class="text-3xl font-semibold mb-6 text-center">Contact Us</h2>
-    <form action="mailto:kyasaramsandeep@gmail.com" method="POST" enctype="text/plain" class="space-y-4">
-      <input type="text" name="name" placeholder="Your Name" required class="w-full p-3 rounded bg-gray-800 text-white" />
-      <input type="email" name="email" placeholder="Your Email" required class="w-full p-3 rounded bg-gray-800 text-white" />
-      <select name="loan-type" class="w-full p-3 rounded bg-gray-800 text-white">
-        <option value="Personal">Personal Loan</option>
-        <option value="Professional">Professional Loan</option>
-        <option value="Home">Home Loan</option>
-        <option value="Business">Business Loan</option>
-        <option value="Mortgage">Mortgage Loan</option>
-        <option value="Education">Education Loan</option>
-        <option value="Other">Other</option>
-      </select>
-      <textarea name="message" rows="4" placeholder="Your message..." required class="w-full p-3 rounded bg-gray-800 text-white"></textarea>
-      <button type="submit" class="bg-green-500 hover:bg-green-600 px-6 py-2 rounded text-white font-semibold">Send Message</button>
-    </form>
+  
+  <!-- Team Section -->
+  <section class="team" id="team">
+    <div class="container">
+      <h2>Meet The Team</h2>
+      <div class="team-grid">
+        <div class="team-member">
+          <img src="https://via.placeholder.com/150" alt="Team Member" />
+          <h3>John Doe</h3>
+          <p>CEO</p>
+        </div>
+        <div class="team-member">
+          <img src="https://via.placeholder.com/150" alt="Team Member" />
+          <h3>Jane Doe</h3>
+          <p>Lead Designer</p>
+        </div>
+        <div class="team-member">
+          <img src="https://via.placeholder.com/150" alt="Team Member" />
+          <h3>Mark Smith</h3>
+          <p>CTO</p>
+        </div>
+      </div>
+    </div>
   </section>
-
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>AOS.init();</script>
+  
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Your Company. All rights reserved.</p>
+    </div>
+  </footer>
 </body>
 </html>
